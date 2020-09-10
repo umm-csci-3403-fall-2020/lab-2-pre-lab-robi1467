@@ -66,7 +66,7 @@ int is_clean(char* str) {
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
   result = strcmp(str, cleaned);
-
+  //FREE cleaned HERE//////
   return result == 0;
 }
 
@@ -90,6 +90,7 @@ int main() {
       printf("The string '%s' is NOT clean.\n", strings[i]);
     }
   }
-
+	//FREE strings here
+	
   return 0;
 }
