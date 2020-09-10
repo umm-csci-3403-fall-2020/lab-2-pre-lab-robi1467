@@ -17,7 +17,7 @@ This memory leak seems to be fairly simple it is from the variable cleaned. Luck
 
 `main()` might have a memory leak with the array of strings but I am not entirly sure
 
-### End
+## End
  
 So I was definitly wrong about my ideas to fix the leaks... besides for `is_cleaned()`. So initially I figured the leak would need to be closed
 directly in `strip()` but that wasn't right since the item was being used outside of it and str just didn't need it. In `main()` I thought it 
