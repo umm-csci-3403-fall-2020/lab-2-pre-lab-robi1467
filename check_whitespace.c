@@ -60,6 +60,7 @@ int is_clean(char* str) {
   // We check if it's clean by calling strip and seeing if the
   // result is the same as the original string.
   cleaned = strip(str);
+  // free str in strip? or at all
 
   // strcmp compares two strings, returning a negative value if
   // the first is less than the second (in alphabetical order),
@@ -67,6 +68,13 @@ int is_clean(char* str) {
   // greater than the second.
   result = strcmp(str, cleaned);
 
+  //cleaned needs to be closed, it can be closed here since we are not returning it.
+  // finding the length of the string to make sure it is note empty since the previous function
+  // can and will return and empty string with nothing to free causing the and invalid pointer thing
+  int stringLength = strlen(cleaned);
+  if(stringLength != 0) {
+  free(cleaned);
+ }
   return result == 0;
 }
 
@@ -89,7 +97,7 @@ int main() {
     } else {
       printf("The string '%s' is NOT clean.\n", strings[i]);
     }
-  }
-
+}
+  
   return 0;
 }
